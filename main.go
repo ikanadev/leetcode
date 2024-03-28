@@ -6,5 +6,5 @@ import (
 )
 
 func main() {
-	fmt.Println(easy.RomanToInt("MCMXCIV"))
+	fmt.Println(easy.LongestCommonPrefix([]string{"flower", "flower", "flower", "flower"}))
 }
