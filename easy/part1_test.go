@@ -83,3 +83,22 @@ func TestMergeTwoLists(t *testing.T) {
 		})
 	}
 }
+
+func TestRemoveDuplicates(t *testing.T) {
+	tests := []struct {
+		input    []int
+		expected int
+	}{
+		{[]int{}, 0},
+		{[]int{1, 1, 2}, 2},
+		{[]int{0, 0, 0}, 1},
+		{[]int{0, 0, 1, 1, 1, 2, 2, 3, 3, 4}, 5},
+	}
+
+	for _, tt := range tests {
+		t.Run("", func(t *testing.T) {
+			got := RemoveDuplicates(tt.input)
+			assert.Equal(t, tt.expected, got)
+		})
+	}
+}

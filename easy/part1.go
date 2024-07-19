@@ -85,3 +85,18 @@ func MergeTwoLists(list1 *ListNode, list2 *ListNode) *ListNode {
 	}
 	return head
 }
+
+// https://leetcode.com/problems/remove-duplicates-from-sorted-array/description/
+func RemoveDuplicates(nums []int) int {
+	if len(nums) == 0 {
+		return 0
+	}
+	index := 0
+	for i := 1; i < len(nums); i++ {
+		if nums[index] != nums[i] {
+			index++
+			nums[index] = nums[i]
+		}
+	}
+	return index + 1
+}

@@ -6,8 +6,5 @@ import (
 )
 
 func main() {
-	fmt.Println(easy.IsValidParentheses("()[]{}"))
-	fmt.Println(easy.IsValidParentheses("([]{}"))
-	fmt.Println(easy.IsValidParentheses("()[{}"))
-	fmt.Println(easy.IsValidParentheses("([])[{}]{(())[]}"))
+	fmt.Println(easy.RemoveDuplicates([]int{1, 1, 1, 1, 2}))
 }
