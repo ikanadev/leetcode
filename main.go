@@ -6,5 +6,8 @@ import (
 )
 
 func main() {
-	fmt.Println(easy.LongestCommonPrefix([]string{"flower", "flower", "flower", "flower"}))
+	fmt.Println(easy.IsValidParentheses("()[]{}"))
+	fmt.Println(easy.IsValidParentheses("([]{}"))
+	fmt.Println(easy.IsValidParentheses("()[{}"))
+	fmt.Println(easy.IsValidParentheses("([])[{}]{(())[]}"))
 }

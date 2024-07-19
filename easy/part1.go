@@ -22,6 +22,7 @@ func RomanToInt(s string) int {
 	return sum
 }
 
+// https://leetcode.com/problems/longest-common-prefix/description/
 func LongestCommonPrefix(strs []string) string {
 	if len(strs) == 0 {
 		return ""
@@ -34,4 +35,29 @@ func LongestCommonPrefix(strs []string) string {
 		}
 	}
 	return strs[0]
+}
+
+// https://leetcode.com/problems/valid-parentheses/description/
+func IsValidParentheses(s string) bool {
+	if len(s)%2 != 0 {
+		return false
+	}
+	m := map[rune]rune{
+		')': '(',
+		']': '[',
+		'}': '{',
+	}
+	stack := make([]rune, 0, len(s))
+	for _, char := range s {
+		openChar, isClosingChar := m[char]
+		if isClosingChar {
+			if len(stack) == 0 || stack[len(stack)-1] != openChar {
+				return false
+			}
+			stack = stack[:len(stack)-1]
+		} else {
+			stack = append(stack, char)
+		}
+	}
+	return len(stack) == 0
 }
