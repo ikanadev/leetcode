@@ -102,3 +102,22 @@ func TestRemoveDuplicates(t *testing.T) {
 		})
 	}
 }
+
+func TestRemoveElement(t *testing.T) {
+	tests := []struct {
+		input    []int
+		val      int
+		expected int
+	}{
+		{[]int{3, 2, 2, 3}, 3, 2},
+		{[]int{0, 1, 2, 2, 3, 0, 4, 2}, 2, 5},
+		{[]int{2, 2, 2}, 2, 0},
+	}
+
+	for _, tt := range tests {
+		t.Run("", func(t *testing.T) {
+			got := RemoveElement(tt.input, tt.val)
+			assert.Equal(t, tt.expected, got)
+		})
+	}
+}
