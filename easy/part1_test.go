@@ -121,3 +121,23 @@ func TestRemoveElement(t *testing.T) {
 		})
 	}
 }
+
+func TestFindIndexOcurrence(t *testing.T) {
+	tests := []struct {
+		haystack string
+		needle   string
+		expected int
+	}{
+		{"sadbutsad", "sad", 0},
+		{"leetcode", "et", 2},
+		{"a", "a", 0},
+		{"iseedeadpeople", "le", 12},
+	}
+
+	for _, tt := range tests {
+		t.Run("", func(t *testing.T) {
+			got := FindIndexOcurrence(tt.haystack, tt.needle)
+			assert.Equal(t, tt.expected, got)
+		})
+	}
+}
