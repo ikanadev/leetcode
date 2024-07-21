@@ -159,3 +159,23 @@ func TestFindIndexOcurrence(t *testing.T) {
 		})
 	}
 }
+
+func TestIsPalindromeNumber(t *testing.T) {
+	tests := []struct {
+		input    int
+		expected bool
+	}{
+		{121, true},
+		{-121, false},
+		{10, false},
+		{1234321, true},
+		{1234322, false},
+		{8888, true},
+	}
+	for _, tt := range tests {
+		t.Run("", func(t *testing.T) {
+			got := IsPalindromeNumber(tt.input)
+			assert.Equal(t, tt.expected, got)
+		})
+	}
+}

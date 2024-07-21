@@ -6,5 +6,5 @@ import (
 )
 
 func main() {
-	fmt.Println(easy.RemoveDuplicates([]int{1, 1, 1, 1, 2}))
+	fmt.Println(easy.IsPalindromeNumber(121))
 }

@@ -12,6 +12,26 @@ func TwoSum(nums []int, target int) []int {
 	return nil
 }
 
+// https://leetcode.com/problems/palindrome-number/description/
+func IsPalindromeNumber(x int) bool {
+	if x < 0 {
+		return false
+	}
+	if x == 0 {
+		return true
+	}
+	if x%10 == 0 {
+		return false
+	}
+	reverse := 0
+	for x > reverse {
+		reverse *= 10
+		reverse += x % 10
+		x /= 10
+	}
+	return x == reverse || x == reverse/10
+}
+
 // https://leetcode.com/problems/roman-to-integer/description/
 func RomanToInt(s string) int {
 	m := map[byte]int{
